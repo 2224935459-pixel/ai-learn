@@ -1,0 +1,13 @@
+# 绝不提交 API key / 密钥
+deepseek_key.txt
+openrouter_key.txt
+*_key.txt
+.env
+
+# 出图/中间产物不进版本库
+copy_out/
+batch_bg/output/
+batch_bg/input_photos/
+__pycache__/
+*.png
+*.jpg
