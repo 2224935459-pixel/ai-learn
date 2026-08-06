@@ -11,3 +11,7 @@ batch_bg/input_photos/
 __pycache__/
 *.png
 *.jpg
+
+# 个人资料(俄语面试等)绝不进AI仓库
+ru_interview.txt
+*面试*.txt
