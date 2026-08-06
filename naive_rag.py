@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 朴素 RAG: 把资料塞给 DeepSeek, 让它只基于资料回答 (不瞎编)
+# 朴素 RAG 示例: 基于本地资料文件回答
 import json, urllib.request, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -7,7 +7,7 @@ KEY_FILE = os.path.join(HERE, "deepseek_key.txt")   # AITools/deepseek_key.txt
 BASE = "https://api.deepseek.com"
 MODEL = "deepseek-v4-flash"
 
-# ===== 你的资料: 从 knowledge.txt 读 (改资料只改文件, 不动代码) =====
+# ===== 资料加载: 从 knowledge.txt 读取 =====
 def load_knowledge():
     kf = os.path.join(HERE, "knowledge.txt")
     with open(kf, encoding="utf-8") as f:
@@ -19,7 +19,7 @@ def get_key():
     return open(KEY_FILE, encoding="utf-8").read().strip()
 
 def ask(question):
-    # 关键: 把资料 + 问题拼一起, 并明确要求"只基于资料答"
+    # 将资料与问题拼接, 约束模型仅基于资料作答
     prompt = (
         "下面是参考资料, 请只根据参考资料回答, 资料里没有就说'资料未提及':\n"
         f"---资料---\n{KNOWLEDGE}\n---资料结束---\n\n"
@@ -37,7 +37,7 @@ def ask(question):
         return json.loads(r.read())["choices"][0]["message"]["content"]
 
 if __name__ == "__main__":
-    q = "江少怎么保养"
+    q = "牛仔裤第一次洗要注意什么?"
     print("问:", q)
     print("-" * 40)
     print(ask(q))
