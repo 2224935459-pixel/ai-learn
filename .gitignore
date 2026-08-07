@@ -2,6 +2,7 @@
 deepseek_key.txt
 openrouter_key.txt
 *_key.txt
+keys/
 .env
 
 # 出图/中间产物不进版本库
@@ -11,6 +12,7 @@ batch_bg/input_photos/
 __pycache__/
 *.png
 *.jpg
+*.log
 
 # 个人资料(俄语面试等)绝不进AI仓库
 ru_interview.txt

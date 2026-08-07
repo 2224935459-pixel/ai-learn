@@ -6,9 +6,10 @@ key 从 AITools/openrouter_key.txt 读. 模型走 OpenRouter 免费档.
 import json, os, urllib.request, urllib.error
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEY_FILE = os.path.join(HERE, "openrouter_key.txt")
-PRODUCTS = os.path.join(HERE, "products.txt")
-OUT = os.path.join(HERE, "copy_out")
+ROOT = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+KEY_FILE = os.path.join(ROOT, "keys", "openrouter_key.txt")
+PRODUCTS = os.path.join(ROOT, "data", "products.txt")
+OUT = os.path.join(ROOT, "image_tools", "copy_out")
 BASE = "https://openrouter.ai/api/v1"
 MODEL = "inclusionai/ling-3.0-flash:free"
 

@@ -3,13 +3,15 @@
 import json, urllib.request, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEY_FILE = os.path.join(HERE, "deepseek_key.txt")   # AITools/deepseek_key.txt
+ROOT = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+KEY_FILE = os.path.join(ROOT, "keys", "deepseek_key.txt")
+KNOWLEDGE_FILE = os.path.join(ROOT, "data", "knowledge.txt")
 BASE = "https://api.deepseek.com"
 MODEL = "deepseek-v4-flash"
 
 # ===== 资料加载: 从 knowledge.txt 读取 =====
 def load_knowledge():
-    kf = os.path.join(HERE, "knowledge.txt")
+    kf = KNOWLEDGE_FILE
     with open(kf, encoding="utf-8") as f:
         return f.read()
 

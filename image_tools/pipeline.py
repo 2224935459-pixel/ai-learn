@@ -9,10 +9,11 @@
 import os, sys, json, urllib.request, urllib.error, shutil
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BATCH = os.path.join(HERE, "batch_bg")
+ROOT = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+BATCH = os.path.join(ROOT, "image_tools", "batch_bg")
 IN = os.path.join(BATCH, "input_photos")
 OUT = os.path.join(BATCH, "output")
-KEY_FILE = os.path.join(HERE, "openrouter_key.txt")
+KEY_FILE = os.path.join(ROOT, "keys", "openrouter_key.txt")
 BASE = "https://openrouter.ai/api/v1"
 MODEL = "inclusionai/ling-3.0-flash:free"
 

@@ -3,12 +3,13 @@
 import json, urllib.request, urllib.error, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-AITOOLS = os.path.abspath(os.path.join(HERE, ".."))
+AITOOLS = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+KEYS = os.path.join(AITOOLS, "keys")
 
 def deepseek_key():
-    return open(os.path.join(AITOOLS, "deepseek_key.txt"), encoding="utf-8").read().strip()
+    return open(os.path.join(KEYS, "deepseek_key.txt"), encoding="utf-8").read().strip()
 def or_key():
-    return open(os.path.join(AITOOLS, "openrouter_key.txt"), encoding="utf-8").read().strip()
+    return open(os.path.join(KEYS, "openrouter_key.txt"), encoding="utf-8").read().strip()
 
 def call(url, key, model, prompt, headers_extra=None, disable_think=False):
     body = {"model": model,

@@ -10,7 +10,8 @@ DeepSeek Agent 模板 (你自己的 key, 国内支付, 极便宜)
 import json, urllib.request, urllib.error, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEY_FILE = os.path.join(HERE, "..", "deepseek_key.txt")   # AITools/deepseek_key.txt
+ROOT = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+KEY_FILE = os.path.join(ROOT, "keys", "deepseek_key.txt")   # AITools/keys/deepseek_key.txt
 BASE = "https://api.deepseek.com"
 MODEL = "deepseek-v4-flash"
 

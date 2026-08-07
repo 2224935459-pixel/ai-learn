@@ -3,9 +3,9 @@
 key 从本地文件读, 不写死在代码里.
 唯一旋钮: MODEL(换模型) / 下面 chat() 里的问句.
 """
-import json, urllib.request, urllib.error
+import json, urllib.request, urllib.error, os
 
-KEY_FILE = r"C:/Users/22249/Desktop/openrouter_key.txt"
+KEY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "keys", "openrouter_key.txt")
 BASE = "https://openrouter.ai/api/v1"
 
 # ===== 唯一要改的旋钮: 用哪个模型 =====

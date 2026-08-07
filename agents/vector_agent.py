@@ -3,7 +3,9 @@
 import json, urllib.request, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEY_FILE = os.path.join(HERE, "deepseek_key.txt")
+ROOT = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+KEY_FILE = os.path.join(ROOT, "keys", "deepseek_key.txt")
+KNOWLEDGE_FILE = os.path.join(ROOT, "data", "knowledge.txt")
 BASE = "https://api.deepseek.com"
 MODEL = "deepseek-v4-flash"
 
@@ -28,7 +30,7 @@ try:
 except Exception:
     pass
 col = client.create_collection("agent_kb")
-with open(os.path.join(HERE, "knowledge.txt"), encoding="utf-8") as f:
+with open(KNOWLEDGE_FILE, encoding="utf-8") as f:
     text = f.read()
 chunks = []
 title = ""

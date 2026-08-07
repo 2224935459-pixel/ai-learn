@@ -3,9 +3,9 @@
 key 从 openrouter_key.txt 读, 模型走 OpenRouter 免费档.
 用法: 双击 run_copy.bat, 黑框里输入产品描述回车即可.
 """
-import json, urllib.request, urllib.error
+import json, urllib.request, urllib.error, os
 
-KEY_FILE = r"C:/Users/22249/Desktop/AITools/openrouter_key.txt"
+KEY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "keys", "openrouter_key.txt")
 BASE = "https://openrouter.ai/api/v1"
 MODEL = "inclusionai/ling-3.0-flash:free"
 

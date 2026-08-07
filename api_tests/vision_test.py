@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # 实测: 视觉模型(gemma-4)能不能读图并返回描述
-import json, base64, urllib.request, urllib.error
+import json, base64, urllib.request, urllib.error, os
 
-KEY_FILE = r"C:/Users/22249/Desktop/AITools/openrouter_key.txt"
+KEY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "keys", "openrouter_key.txt")
 BASE = "https://openrouter.ai/api/v1"
 VISION = "google/gemma-4-26b-a4b-it:free"
 

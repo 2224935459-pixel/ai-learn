@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # 最小 Agent: 给 AI 一个工具, 让它自己决定调不调
-import json, urllib.request, urllib.error
+import json, urllib.request, urllib.error, os
 
-KEY_FILE = r"C:/Users/22249/Desktop/AITools/openrouter_key.txt"
+KEY_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "keys", "openrouter_key.txt")
 BASE = "https://openrouter.ai/api/v1"
 MODEL = "inclusionai/ling-3.0-flash:free"
 

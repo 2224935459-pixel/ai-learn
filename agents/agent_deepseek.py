@@ -3,7 +3,8 @@
 import json, urllib.request, urllib.error, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-KEY_FILE = os.path.join(HERE, "..", "deepseek_key.txt")   # 在上一级 AITools/ 下
+ROOT = os.path.abspath(os.path.join(HERE, ".."))   # AITools 根
+KEY_FILE = os.path.join(ROOT, "keys", "deepseek_key.txt")   # 在上一级 AITools/keys/ 下
 BASE = "https://api.deepseek.com"          # DeepSeek 官方端点 (OpenAI 兼容)
 MODEL = "deepseek-v4-flash"                # 便宜够用, 支持 tool calls
 
