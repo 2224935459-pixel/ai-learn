@@ -9,6 +9,8 @@ keys/
 copy_out/
 batch_bg/output/
 batch_bg/input_photos/
+image_tools/batch_bg/output/
+image_tools/batch_bg/input_photos/
 __pycache__/
 *.png
 *.jpg
